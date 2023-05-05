@@ -1,0 +1,130 @@
+// main: ../customwpfields.less
+
+/* Uploader */
+.wpcf-upload-wrapper {
+    clear: both;
+    overflow: hidden;
+}
+
+// Hide the add field if we have some data
+.wpcf-upload-wrapper[data-multiple=""] .wpcf-single-media + .wpcf-single-media {
+    display: none !important;
+}
+
+.wpcf-single-media {
+    box-sizing: border-box;
+    border-radius: @wp-btnradius;
+    border: 1px solid @wp-btnborder;    
+    float: left;  
+    display: block;
+    height: 150px;
+    margin: 0 7px 7px 0;
+    position: relative; 
+    text-align: center;    
+    width: 150px;
+    i {
+        font-size: 16px;
+        line-height: @grid-space;
+    }
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+    .wpcf-upload-remove {
+        background: #fff;
+        border: 1px solid @wp-btnborder;
+        border-radius: 3px;
+        color: @wp-red; 
+        height: @grid-space;
+        position: absolute;
+        text-align: center;
+        top: 3px;
+        right: 3px;
+        width: @grid-space;
+        z-index: 9;
+        &:hover {
+            color: @wp-blue;
+        }
+    }
+    .wpcf-upload-add {
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 700;
+        left: 50%;
+        margin: -30px 0 0 -60px;
+        padding: @grid-space*0.5;
+        position: absolute;
+        top: 50%;
+        width: 120px;
+        &:focus, &:active {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+        i {
+            left: -6px;
+            position: relative;
+            top: 3px;
+        }
+    }
+    &.empty {
+        border: 1px dashed @wp-btnborder;
+    }
+    &.type-video {
+        width: 210px;
+    } 
+    &.type-audio {
+        padding-top: 40px;
+        width: 314px;           
+    }
+}
+
+// Our input for sortable 
+.wpcf-media-highlight {
+    box-sizing: border-box;
+    border-radius: @wp-btnradius;
+    border: 1px dashed @wp-btnborder;    
+    float: left;  
+    height: 150px;
+    margin: 0 7px 7px 0;  
+    width: 150px;
+}
+
+.wpcf-media-url {
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    margin: 0 -1px -1px -1px;
+    position: absolute;
+    z-index: 9;
+    width: ~"calc(100% + 2px)";
+    i {
+        background-color: @wp-greyer;
+        border-radius: @wp-btnradius;
+        border: 1px solid @wp-btnborder;
+        box-sizing: border-box;
+        height: 100%;
+        line-height: 25px; 
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 18px;
+    }
+    input {
+        border-left: none; 
+        padding-left: 26px;    
+        margin: 0;
+        width: 100%;
+        &:focus {
+            border-color: #ddd;
+            box-shadow: none;
+        }
+    }
+}
+
+.wpcf-background-attributes {
+    .wpcf-select, .select2-container {
+        display: block;
+        min-width: 190px;
+    }
+}

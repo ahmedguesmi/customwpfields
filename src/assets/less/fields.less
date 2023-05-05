@@ -1,0 +1,140 @@
+// main: customwpfields.less
+
+/**
+ * Framework Fields
+ * ----------------------------------
+ */
+@import 'fields/button.less';
+@import 'fields/boxshadow.less';
+@import 'fields/colorpicker.less';
+@import 'fields/datepicker.less';
+@import 'fields/dimensions.less';
+@import 'fields/heading.less';
+@import 'fields/icons.less';
+@import 'fields/location.less';
+@import 'fields/media.less';
+@import 'fields/radio.less';
+@import 'fields/repeatable.less';
+@import 'fields/select.less';
+@import 'fields/slider.less';
+@import 'fields/typography.less';
+
+
+/**
+ * General Field sTyling
+ */
+.wpcf-field-left {
+    display: inline-block;
+    margin-right: @grid-space;
+    vertical-align: top;
+}
+
+.wpcf-field {
+    box-sizing: border-box;
+    padding-bottom: @grid-space*0.75;
+    &.field-divider, &.field-heading {
+        border: none;
+        padding: 0;
+    }
+    input:placeholder {
+        color: @wp-greyborder;
+    }
+}
+
+.wpcf-dependent-field {
+    display: none;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.wpcf-field-title {
+    border-bottom: 1px solid @light-grey;
+    h4 {
+        font-size: 1.1em;
+        margin: 0 0 0.5em 0;
+    }
+}
+
+.wpcf-field-description {
+    p {
+        color: @wp-description;
+        font-size: 14px;
+        font-style: italic;
+    }
+}
+
+.wpcf-field-input {
+    margin: 20px 0 10px 0;
+    .error {
+        border: 1px solid @wp-red;
+    }
+    label.error {
+        background: lighten(@wp-red, 30); 
+        display: block;
+        margin: 10px 1px 0 1px;
+        padding: 3px 5px;
+        position: relative;
+        &:before {
+            border-bottom: 7px solid @wp-red;
+            border-left: 7px solid transparent; 
+            border-right: 7px solid transparent; 
+            content: '';
+            display: block;
+            height: 0;
+            left: 5px;
+            position: absolute;
+            top: -7px;
+            width: 0;
+        }
+    } 
+    input[readonly]:hover {
+        cursor: not-allowed;
+        -moz-user-select: none;
+        user-select: none;
+    }   
+}
+
+.wpcf-icon-list {
+    overflow: hidden;
+    margin: 1px 1px @grid-space*0.5 1px;
+    li {
+        border: 1px solid @wp-btnborder;
+        border-radius: @wp-btnradius;
+        float: left;
+        height: 28px;
+        margin: 0 0 0 -1px;
+        width: 28px;
+        &:first-child {
+            margin-left: 0;
+        }
+        label {
+            background-color: @white;
+            display: block;
+            font-size: 16px;
+            height: 28px;
+            i {
+                line-height: 28px;
+            }
+            margin: 0;
+            text-align: center;
+        }
+        input {
+            display: none;
+        }
+        input:checked ~ label, label:hover {
+            background-color: @wp-blue;
+            color: @white;
+        }
+    }  
+}  
+
+/**
+ * Reusable classes
+ */
+.input-button-clear {
+    color: @wp-red;
+}

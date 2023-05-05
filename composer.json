@@ -1,0 +1,20 @@
+{
+    "name": "ahmedguesmi/customwpfields",
+    "description": "WP Custom Fields allows you to add custom fields easily to options pages, post, taxonomy and usermeta and customizer fields.",
+    "license": "GPL",
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ahmedguesmi\\Customwpfields\\": "src"
+        }
+    },
+    "homepage": "https://github.com/ahmedguesmi/customwpfields",
+    "authors": [ 
+        {
+            "name": "Guesmi Ahmed",
+            "email": "ahmedguesmi.sb@gmail.com"
+        } 
+    ]           
+}

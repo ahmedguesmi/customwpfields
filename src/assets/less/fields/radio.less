@@ -1,0 +1,110 @@
+// main: ../customwpfields.less
+
+/* Radio and Checkbox Fields */
+.wpcf-field-checkbox-wrapper, .wpcf-field-radio-wrapper {
+    margin: 5px 1px 9px 1px;
+    i {
+        font-size: 1.25em; 
+        margin-right: 5px; 
+        position: relative;
+        top: 2px;
+    }    
+    input, label {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+    }
+    label {
+        margin: 0 @grid-space*0.5 0 @grid-space*0.25;
+    } 
+    img {
+        display: block;
+    }
+    &.switcher, &.buttonset {
+        input {
+            display: none;
+            height: 0;
+            margin: 0;
+            min-width: 0;
+            visibility: hidden;
+            width: 0;        
+        }         
+    }
+    &.buttonset {
+        li {
+            display: inline-block;
+            vertical-align: top;
+        }
+        label {
+            background-color: @wp-btnback;        
+            border: 1px solid @wp-btnborder;
+            border-radius: @wp-btnradius;
+            box-shadow: @wp-btnboxshadow;
+            color: @wp-btncolor;
+            line-height: 40px;
+            margin: 0;
+            padding: 5px 20px;
+            transition: @base-transition;
+        }
+        input:checked + label {
+            background-color: @wp-blue;
+            border: 1px solid @wp-blueborder;
+            box-shadow: 1px solid @wp-blueborder;
+            color: #fff;
+        }   
+        label:hover {
+            background-color: @wp-btnbackhvr;        
+            border: 1px solid @wp-btnborderhvr;
+            color: @wp-btncolorhvr;
+        }
+    }
+    &.switcher {
+        label {
+            margin: 0;
+            position: relative;
+            span {
+                position: relative;
+                top: -7px;
+            }
+            &:before {
+                background-color: @wp-btnback;
+                border: 1px solid @wp-btnborder;
+                border-radius: @grid-space*0.5;
+                content: '';
+                display: inline-block;
+                height: @grid-space - 2;
+                margin-right: 6px;
+                position: relative;
+                transition: all 200ms ease-out;
+                width: @grid-space*2;                
+            }
+            &:hover:before {
+                background-color: @wp-btnbackhvr;
+                border: 1px solid @wp-btnborderhvr;                
+            }
+            &:after {
+                background: #fff;
+                box-shadow: @wp-boxshadow;
+                border-radius: 50%;
+                content: '';
+                height: @grid-space - 2;
+                left: 1px;
+                position: absolute;
+                top: 1px;
+                transition: all 200ms ease-out;
+                width: @grid-space - 2;
+            }
+        }
+        input:checked + label {
+            &:before {
+                background-color: @wp-green;    
+            }
+            &:after {
+                left: @grid-space + 3;
+            }
+        }
+    }
+    &.switcher-disable input:checked + label:before {
+        background-color: @wp-red;    
+    }        
+}
